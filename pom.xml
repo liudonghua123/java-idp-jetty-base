@@ -34,6 +34,22 @@
             <optional>true</optional>
             <scope>runtime</scope>
         </dependency>
+        <!-- Logging dependencies. https://issues.shibboleth.net/jira/browse/JPAR-57 -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>${slf4j.groupId}</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
 
         <!-- Test Dependencies -->
 
@@ -63,6 +79,35 @@
                                     <outputDirectory>${project.build.outputDirectory}/jetty-base/lib/ext</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
+                        </configuration>
+                    </execution>
+                    <!-- Copy logging dependencies to jetty-base/lib/logging/ directory. -->
+                    <execution>
+                        <id>copy-jetty-logging-dependencies</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>ch.qos.logback</groupId>
+                                    <artifactId>logback-classic</artifactId>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>ch.qos.logback</groupId>
+                                    <artifactId>logback-core</artifactId>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>ch.qos.logback</groupId>
+                                    <artifactId>logback-access</artifactId>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>${slf4j.groupId}</groupId>
+                                    <artifactId>jcl-over-slf4j</artifactId>
+                                </artifactItem>
+                            </artifactItems>
+                            <outputDirectory>${project.build.outputDirectory}/jetty-base/lib/logging/</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
