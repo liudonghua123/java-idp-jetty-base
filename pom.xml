@@ -16,16 +16,58 @@
     <packaging>jar</packaging>
     <version>9.2.0-SNAPSHOT</version>
 
+    <properties>
+        <jetty9-dta-ssl.version>1.0.0</jetty9-dta-ssl.version>
+    </properties>
+
     <dependencies>
         <!-- Compile Dependencies -->
 
         <!-- Provided Dependencies -->
 
         <!-- Runtime Dependencies -->
+        <!-- Our Jetty 9 DTA plugin -->
+        <dependency>
+            <groupId>net.shibboleth.utilities.jetty9</groupId>
+            <artifactId>jetty9-dta-ssl</artifactId>
+            <version>${jetty9-dta-ssl.version}</version>
+            <optional>true</optional>
+            <scope>runtime</scope>
+        </dependency>
 
         <!-- Test Dependencies -->
 
         <!-- Managed Dependencies -->
     </dependencies>
-    
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <!-- Copy Jetty DTA plugin to jetty-base/lib/ext/ directory. -->
+                    <execution>
+                        <id>copy-jetty-dta-ssl</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>net.shibboleth.utilities.jetty9</groupId>
+                                    <artifactId>jetty9-dta-ssl</artifactId>
+                                    <version>${jetty9-dta-ssl.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <outputDirectory>${project.build.outputDirectory}/jetty-base/lib/ext</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
