@@ -34,4 +34,5 @@
             <lineEnding>windows</lineEnding>
         </fileSet>
     </fileSets>
+    <includeBaseDirectory>false</includeBaseDirectory>
 </assembly>
