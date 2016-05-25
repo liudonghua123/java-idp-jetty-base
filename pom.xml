@@ -13,11 +13,12 @@
     <name>idp-example-jetty-base</name>
     <groupId>net.shibboleth.idp.example</groupId>
     <artifactId>idp-example-jetty-base</artifactId>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
     <version>9.3.0-SNAPSHOT</version>
 
     <properties>
         <jetty9-dta-ssl.version>1.0.0</jetty9-dta-ssl.version>
+        <assemblyDirectory>${project.build.directory}/idp-example-jetty-base</assemblyDirectory>
     </properties>
 
     <repositories>
@@ -75,6 +76,28 @@
 
     <build>
         <plugins>
+            <!-- Copy src/main/resources to assembly directory. -->
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <includeEmptyDirs>true</includeEmptyDirs>
+                            <outputDirectory>${assemblyDirectory}</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/src/main/resources</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
@@ -93,7 +116,7 @@
                                     <version>${jetty9-dta-ssl.version}</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>
-                                    <outputDirectory>${project.build.outputDirectory}/jetty-base/lib/ext</outputDirectory>
+                                    <outputDirectory>${assemblyDirectory}/jetty-base/lib/ext</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
@@ -124,8 +147,29 @@
                                     <artifactId>jcl-over-slf4j</artifactId>
                                 </artifactItem>
                             </artifactItems>
-                            <outputDirectory>${project.build.outputDirectory}/jetty-base/lib/logging/</outputDirectory>
+                            <outputDirectory>${assemblyDirectory}/jetty-base/lib/logging/</outputDirectory>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <descriptors>
+                        <descriptor>src/main/assembly/tgz.xml</descriptor>
+                        <descriptor>src/main/assembly/zip.xml</descriptor>
+                    </descriptors>
+                    <tarLongFileMode>gnu</tarLongFileMode>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
