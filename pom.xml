@@ -10,15 +10,15 @@
         <version>TRUNK-SNAPSHOT</version>
     </parent>
 
-    <name>idp-example-jetty-base</name>
-    <groupId>net.shibboleth.idp.example</groupId>
-    <artifactId>idp-example-jetty-base</artifactId>
+    <name>idp-jetty-base</name>
+    <groupId>net.shibboleth.idp</groupId>
+    <artifactId>idp-jetty-base</artifactId>
     <packaging>pom</packaging>
     <version>9.3.0-SNAPSHOT</version>
 
     <properties>
         <jetty9-dta-ssl.version>1.0.0</jetty9-dta-ssl.version>
-        <assemblyDirectory>${project.build.directory}/idp-example-jetty-base</assemblyDirectory>
+        <assemblyDirectory>${project.build.directory}/idp-jetty-base</assemblyDirectory>
     </properties>
 
     <repositories>
