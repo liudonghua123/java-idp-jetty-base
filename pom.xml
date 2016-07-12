@@ -10,9 +10,9 @@
         <version>TRUNK-SNAPSHOT</version>
     </parent>
 
-    <name>idp-example-jetty-base</name>
-    <groupId>net.shibboleth.idp.example</groupId>
-    <artifactId>idp-example-jetty-base</artifactId>
+    <name>idp-jetty-base</name>
+    <groupId>net.shibboleth.idp</groupId>
+    <artifactId>idp-jetty-base</artifactId>
     <packaging>jar</packaging>
 
     <repositories>
