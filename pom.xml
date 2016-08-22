@@ -149,6 +149,10 @@
                                     <groupId>${slf4j.groupId}</groupId>
                                     <artifactId>jcl-over-slf4j</artifactId>
                                 </artifactItem>
+                                <artifactItem>
+                                    <groupId>${slf4j.groupId}</groupId>
+                                    <artifactId>slf4j-api</artifactId>
+                                </artifactItem>
                             </artifactItems>
                             <outputDirectory>${assemblyDirectory}/jetty-base/lib/logging/</outputDirectory>
                         </configuration>
