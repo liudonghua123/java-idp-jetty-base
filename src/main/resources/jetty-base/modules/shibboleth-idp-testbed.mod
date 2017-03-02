@@ -2,6 +2,7 @@
 Shibboleth IdP Testbed
 
 [depend]
+http
 shibboleth-idp
 
 [files]
