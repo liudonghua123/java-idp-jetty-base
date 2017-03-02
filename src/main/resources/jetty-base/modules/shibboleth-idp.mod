@@ -17,6 +17,9 @@ ssl
 [files]
 tmp/
 
+[exec]
+-Djava.io.tmpdir=tmp
+
 [ini]
 
 # Bypass file validation for the SSL module, to work around a bug in Jetty 9.3.X
