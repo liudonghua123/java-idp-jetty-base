@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://www.eclipse.org/jetty/configure_9_0.dtd">
+
+<!-- =============================================================== -->
+<!-- Configure the Shibboleth IdP webapp                             -->
+<!-- =============================================================== -->
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+  <Set name="war"><SystemProperty name="idp.home"/>/war/idp.war</Set>
+  <Set name="contextPath">/idp</Set>
+  <Set name="extractWAR">false</Set>
+  <Set name="copyWebDir">false</Set>
+  <Set name="copyWebInf">true</Set>
+
+  <Set name="overrideDescriptor">etc/web-override.xml</Set>
+  <Set name="extraClasspath">/workspaces/shib-work/java-idp-jetty-base/target/idp-jetty-base/jetty-base/lib/idp-testbed/idp-testbed-classes.jar</Set>
+</Configure>
