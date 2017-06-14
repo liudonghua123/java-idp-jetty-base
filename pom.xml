@@ -109,6 +109,52 @@
                             </artifactItems>
                         </configuration>
                     </execution>
+                    <!-- Copy SLF4J logging dependencies to jetty-base/lib/slf4j directory. -->
+                    <execution>
+                        <id>copy-jetty-logging-slf4j</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>${slf4j.groupId}</groupId>
+                                    <artifactId>slf4j-api</artifactId>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>${slf4j.groupId}</groupId>
+                                    <artifactId>jcl-over-slf4j</artifactId>
+                                </artifactItem>
+                            </artifactItems>
+                            <outputDirectory>${assemblyDirectory}/jetty-base/lib/slf4j/</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <!-- Copy Logback logging dependencies to jetty-base/lib/logback directory. -->
+                    <execution>
+                        <id>copy-jetty-logging-logback</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>ch.qos.logback</groupId>
+                                    <artifactId>logback-classic</artifactId>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>ch.qos.logback</groupId>
+                                    <artifactId>logback-core</artifactId>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>ch.qos.logback</groupId>
+                                    <artifactId>logback-access</artifactId>
+                                </artifactItem>
+                            </artifactItems>
+                            <outputDirectory>${assemblyDirectory}/jetty-base/lib/logback/</outputDirectory>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
