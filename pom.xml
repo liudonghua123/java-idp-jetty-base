@@ -163,8 +163,8 @@
                 <configuration>
                     <appendAssemblyId>false</appendAssemblyId>
                     <descriptors>
-                        <descriptor>src/main/assembly/tgz.xml</descriptor>
-                        <descriptor>src/main/assembly/zip.xml</descriptor>
+                        <descriptor>src/main/assembly/unix.xml</descriptor>
+                        <descriptor>src/main/assembly/windows.xml</descriptor>
                     </descriptors>
                     <tarLongFileMode>gnu</tarLongFileMode>
                 </configuration>
