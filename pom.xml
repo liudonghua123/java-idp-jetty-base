@@ -84,6 +84,25 @@
                             </resources>
                         </configuration>
                     </execution>
+                    <!-- Copy src/test/resources to assembly-testbed directory. -->
+                    <execution>
+                        <id>copy-testbed-resources</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${assemblyDirectory}-testbed</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/src/test/resources</directory>
+                                    <excludes>
+                                        <exclude>**/.gitkeep</exclude>
+                                    </excludes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -157,14 +176,15 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- Assemble the artifacts. -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
-                    <appendAssemblyId>false</appendAssemblyId>
                     <descriptors>
                         <descriptor>src/main/assembly/unix.xml</descriptor>
                         <descriptor>src/main/assembly/windows.xml</descriptor>
+                        <descriptor>src/main/assembly/testbed.xml</descriptor>
                     </descriptors>
                     <tarLongFileMode>gnu</tarLongFileMode>
                 </configuration>
@@ -180,39 +200,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>testbed</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-resources-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>copy-testbed-resources</id>
-                                <phase>prepare-package</phase>
-                                <goals>
-                                    <goal>copy-resources</goal>
-                                </goals>
-                                <configuration>
-                                    <outputDirectory>${assemblyDirectory}</outputDirectory>
-                                    <resources>
-                                        <resource>
-                                            <directory>${basedir}/src/test/resources</directory>
-                                            <excludes>
-                                                <exclude>**/.gitkeep</exclude>
-                                            </excludes>
-                                        </resource>
-                                    </resources>
-                                    <overwrite>true</overwrite>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 
 </project>
