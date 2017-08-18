@@ -17,14 +17,16 @@ ssl
 [files]
 tmp/
 
-[exec]
--Djava.io.tmpdir=tmp
-
 [ini]
 
 # Bypass file validation for the SSL module, to work around a bug in Jetty 9.3.X
 # don't create etc/keystore
 --skip-file-validation=ssl
+
+# TODO probably do not want to exec on Windows 
+
+# [exec]
+# -Djava.io.tmpdir=tmp
 
 # Allows setting Java system properties (-Dname=value)
 # and JVM flags (-X, -XX) in this file
