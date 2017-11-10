@@ -85,6 +85,7 @@
                         </configuration>
                     </execution>
                     <!-- Copy src/test/resources to assembly-testbed directory. -->
+                    <!-- Don't build the testbed this way, yet ...
                     <execution>
                         <id>copy-testbed-resources</id>
                         <phase>prepare-package</phase>
@@ -103,6 +104,7 @@
                             </resources>
                         </configuration>
                     </execution>
+                     -->
                 </executions>
             </plugin>
             <plugin>
@@ -181,10 +183,11 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
+                    <appendAssemblyId>false</appendAssemblyId>
                     <descriptors>
-                        <descriptor>src/main/assembly/unix.xml</descriptor>
-                        <descriptor>src/main/assembly/windows.xml</descriptor>
-                        <descriptor>src/main/assembly/testbed.xml</descriptor>
+                        <descriptor>src/main/assembly/tgz.xml</descriptor>
+                        <descriptor>src/main/assembly/zip.xml</descriptor>
+                        <!--  <descriptor>src/main/assembly/testbed.xml</descriptor> -->
                     </descriptors>
                     <tarLongFileMode>gnu</tarLongFileMode>
                 </configuration>
