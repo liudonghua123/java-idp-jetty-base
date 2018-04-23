@@ -43,6 +43,3 @@ tmp/
 # for handling larger (> 25M) metadata files but you will need to test on
 # your particular metadata configuration
 # -Xmx1500m
-
-# Maximum amount of memory allowed for the JVM permanent generation (Java 7 only)
-# -XX:MaxPermSize=128m
