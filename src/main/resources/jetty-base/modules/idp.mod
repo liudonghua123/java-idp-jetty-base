@@ -23,11 +23,6 @@ tmp/
 # [exec]
 # -Djava.io.tmpdir=tmp
 
-# Allows setting Java system properties (-Dname=value)
-# and JVM flags (-X, -XX) in this file
-# NOTE: spawns child Java process
-# --exec
-
 # Uncomment if IdP is installed somewhere other than /opt/shibboleth-idp
 #-Didp.home=/path/to/shibboleth-idp
 
