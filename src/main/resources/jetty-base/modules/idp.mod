@@ -16,6 +16,3 @@ ssl
 
 [files]
 tmp/
-
-[xml]
-etc/idp-ssl-context.xml
