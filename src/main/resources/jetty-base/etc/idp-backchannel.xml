@@ -7,9 +7,9 @@
   <!-- for backchannel (SOAP) communication to IdP                   -->
   <!-- ============================================================= -->
   <New id="shibContextFactory" class="net.shibboleth.utilities.jetty9.DelegateToApplicationSslContextFactory">
-    <Set name="KeyStorePath"><Property name="jetty.backchannel.keystore.path" default="../credentials/idp-backchannel.p12" /></Set>
-    <Set name="KeyStoreType"><Property name="jetty.backchannel.keystore.type" default="PKCS12" /></Set>
-    <Set name="KeyStorePassword"><Property name="jetty.backchannel.keystore.password" default="changeit" /></Set>
+    <Set name="KeyStorePath"><Property name="idp.backchannel.keystore.path" default="../credentials/idp-backchannel.p12" /></Set>
+    <Set name="KeyStoreType"><Property name="idp.backchannel.keystore.type" default="PKCS12" /></Set>
+    <Set name="KeyStorePassword"><Property name="idp.backchannel.keystore.password" default="changeit" /></Set>
     <Set name="EndpointIdentificationAlgorithm"></Set>
     <Set name="renegotiationAllowed">false</Set>
     <Set name="useCipherSuitesOrder">true</Set>
@@ -50,8 +50,8 @@
             </Item>
           </Array>
         </Arg>
-        <Set name="host"><Property name="jetty.backchannel.host" default="0.0.0.0" /></Set>
-        <Set name="port"><Property name="jetty.backchannel.port" default="8443" /></Set>
+        <Set name="host"><Property name="idp.backchannel.host" default="0.0.0.0" /></Set>
+        <Set name="port"><Property name="idp.backchannel.port" default="8443" /></Set>
         <Set name="idleTimeout"><Property name="jetty.ssl.timeout" default="30000"/></Set>
         <Set name="soLingerTime"><Property name="jetty.ssl.soLingerTime" default="-1"/></Set>
         <Set name="acceptorPriorityDelta"><Property name="jetty.ssl.acceptorPriorityDelta" default="0"/></Set>
