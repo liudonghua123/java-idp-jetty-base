@@ -17,18 +17,18 @@
 
 # Path to keystores (relative to idp\idp-base)
 #
-idp.backchannel.keystore.path=../credentials/idp-backchannel.p12
+idp.backchannel.keyStorePath=../credentials/idp-backchannel.p12
 jetty.sslContext.keyStorePath=../credentials/idp-userfacing.p12
 
 # Keystore passwords
 #
-idp.backchannel.keystore.password=changeit
+idp.backchannel.keyStorePassword=changeit
 jetty.sslContext.keyStorePassword=changeit
 
 # Keystore types
 # You ahould not need to change them and support
 # may be removed in future releases
-idp.backchannel.keystore.type=PKCS12
+idp.backchannel.keyStoreType=PKCS12
 jetty.sslContext.keyStoreType=PKCS12
 
 
