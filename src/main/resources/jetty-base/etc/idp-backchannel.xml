@@ -7,9 +7,9 @@
   <!-- for backchannel (SOAP) communication to IdP                   -->
   <!-- ============================================================= -->
   <New id="shibContextFactory" class="net.shibboleth.utilities.jetty9.DelegateToApplicationSslContextFactory">
-    <Set name="KeyStorePath"><Property name="idp.backchannel.keystore.path" default="../credentials/idp-backchannel.p12" /></Set>
-    <Set name="KeyStoreType"><Property name="idp.backchannel.keystore.type" default="PKCS12" /></Set>
-    <Set name="KeyStorePassword"><Property name="idp.backchannel.keystore.password" default="changeit" /></Set>
+    <Set name="KeyStorePath"><Property name="idp.backchannel.keyStorePath" default="../credentials/idp-backchannel.p12" /></Set>
+    <Set name="KeyStoreType"><Property name="idp.backchannel.keyStoreType" default="PKCS12" /></Set>
+    <Set name="KeyStorePassword"><Property name="idp.backchannel.keyStorePassword" default="changeit" /></Set>
     <Set name="EndpointIdentificationAlgorithm"></Set>
     <Set name="renegotiationAllowed">false</Set>
     <Set name="useCipherSuitesOrder">true</Set>
