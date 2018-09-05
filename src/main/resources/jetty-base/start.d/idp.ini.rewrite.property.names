@@ -1,5 +1,0 @@
-# Property names to change.
-# The format is "oldPopertyName=currentPropertyName"
-#
-# Note that in order to guarantee backwards compatibility we can only add to this list.
-#
