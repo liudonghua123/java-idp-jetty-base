@@ -12,5 +12,5 @@
   <Set name="copyWebInf">true</Set>
 
   <Set name="overrideDescriptor">etc/web-override.xml</Set>
-  <Set name="extraClasspath">/workspaces/shib-work/java-idp-jetty-base/target/idp-jetty-base/jetty-base/lib/idp-testbed/idp-testbed-classes.jar</Set>
+  <Set name="extraClasspath"><Property name="jetty.base" />/lib/idp-testbed/idp-testbed-classes.jar</Set>
 </Configure>
