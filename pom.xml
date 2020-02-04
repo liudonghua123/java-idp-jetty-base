@@ -14,7 +14,7 @@
     <groupId>net.shibboleth.idp</groupId>
     <artifactId>idp-jetty-base</artifactId>
     <packaging>pom</packaging>
-    <version>9.4.1-SNAPSHOT</version>
+    <version>9.4.1-WINDOWS-SNAPSHOT</version>
 
     <properties>
         <jetty9-dta-ssl.version>1.0.0</jetty9-dta-ssl.version>
