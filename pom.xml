@@ -17,7 +17,7 @@
     <version>9.4.1-WINDOWS-SNAPSHOT</version>
 
     <properties>
-        <jetty9-dta-ssl.version>1.0.0</jetty9-dta-ssl.version>
+        <jetty94-dta-ssl.version>1.0.0</jetty94-dta-ssl.version>
         <assemblyDirectory>${project.build.directory}/idp-jetty-base</assemblyDirectory>
     </properties>
 
@@ -47,8 +47,8 @@
         <!-- Our Jetty 9 DTA plugin -->
         <dependency>
             <groupId>net.shibboleth.utilities.jetty9</groupId>
-            <artifactId>jetty9-dta-ssl</artifactId>
-            <version>${jetty9-dta-ssl.version}</version>
+            <artifactId>jetty94-dta-ssl</artifactId>
+            <version>${jetty94-dta-ssl.version}</version>
             <optional>true</optional>
             <scope>runtime</scope>
         </dependency>
@@ -121,8 +121,8 @@
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>net.shibboleth.utilities.jetty9</groupId>
-                                    <artifactId>jetty9-dta-ssl</artifactId>
-                                    <version>${jetty9-dta-ssl.version}</version>
+                                    <artifactId>jetty94-dta-ssl</artifactId>
+                                    <version>${jetty94-dta-ssl.version}</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>
                                     <outputDirectory>${assemblyDirectory}/jetty-base/lib/ext</outputDirectory>
