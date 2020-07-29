@@ -7,15 +7,11 @@ https://build.shibboleth.net/nexus/service/local/artifact/maven/redirect?r=third
 https://build.shibboleth.net/nexus/service/local/artifact/maven/redirect?r=thirdparty&g=org.hsqldb&a=hsqldb&v=2.3.3&p=jar|lib/ext/hsqldb-2.3.3.jar
 
 [lib]
-# idp-conf, test resources first
-../../../../../java-identity-provider/idp-conf/src/test/resources/
-../../../../../java-identity-provider/idp-conf/src/main/resources/
-
 # idp-conf test classes
 ../../../../../java-identity-provider/idp-conf/target/test-classes/
 
 # idp-war third-party dependencies only
-../../../../../java-identity-provider/idp-war/target/idp-war-4.0.0-SNAPSHOT/WEB-INF/lib/*.jar
+../../../../../java-identity-provider/idp-war/target/idp-war-4.1.0-SNAPSHOT/WEB-INF/lib/*.jar
 
 
 # classes built by Eclipse
@@ -26,5 +22,4 @@ https://build.shibboleth.net/nexus/service/local/artifact/maven/redirect?r=third
 
 
 # testbed resources and classes
-../../../../../java-idp-testbed/src/main/resources/
 ../../../../../java-idp-testbed/target/classes/
