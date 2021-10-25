@@ -201,6 +201,38 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.shibboleth.maven.enforcer.rules</groupId>
+                        <artifactId>maven-dist-enforcer</artifactId>
+                        <version>2.1.0</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>idp-enforce</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <jarEnforcer implementation="net.shibboleth.mvn.enforcer.impl.JarEnforcer">
+                                    <enforcerData>${basedir}/src/main/enforcer</enforcerData>
+                                    <parentPomDir>${basedir}</parentPomDir>
+                                    <jarDirs>${project.build.directory}/idp-jetty-base/jetty-base/lib/ext ${project.build.directory}/idp-jetty-base/jetty-base/lib/logback ${project.build.directory}/idp-jetty-base/jetty-base/lib/slf4j bin/lib </jarDirs>
+                                    <checkSignatures>true</checkSignatures>
+                                    <checkDependencies>false</checkDependencies>
+                                    <listJarSources>false</listJarSources>
+                                </jarEnforcer>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
