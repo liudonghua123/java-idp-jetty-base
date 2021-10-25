@@ -17,6 +17,8 @@
     <version>for-9.4.44-WINDOWS-SNAPSHOT</version>
 
     <properties>
+        <slf4j.version>1.7.32</slf4j.version>
+        <logback.version>1.2.6</logback.version>
         <jetty94-dta-ssl.version>1.0.0</jetty94-dta-ssl.version>
         <assemblyDirectory>${project.build.directory}/idp-jetty-base</assemblyDirectory>
     </properties>
@@ -140,12 +142,14 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>${slf4j.groupId}</groupId>
+                                    <groupId>org.slf4j</groupId>
                                     <artifactId>slf4j-api</artifactId>
+                                    <version>${slf4j.version}</version>
                                 </artifactItem>
                                 <artifactItem>
-                                    <groupId>${slf4j.groupId}</groupId>
+                                    <groupId>org.slf4j</groupId>
                                     <artifactId>jcl-over-slf4j</artifactId>
+                                    <version>${slf4j.version}</version>
                                 </artifactItem>
                             </artifactItems>
                             <outputDirectory>${assemblyDirectory}/jetty-base/lib/slf4j/</outputDirectory>
@@ -163,14 +167,17 @@
                                 <artifactItem>
                                     <groupId>ch.qos.logback</groupId>
                                     <artifactId>logback-classic</artifactId>
+                                    <version>${logback.version}</version>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>ch.qos.logback</groupId>
                                     <artifactId>logback-core</artifactId>
+                                    <version>${logback.version}</version>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>ch.qos.logback</groupId>
                                     <artifactId>logback-access</artifactId>
+                                    <version>${logback.version}</version>
                                 </artifactItem>
                             </artifactItems>
                             <outputDirectory>${assemblyDirectory}/jetty-base/lib/logback/</outputDirectory>
@@ -235,5 +242,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
