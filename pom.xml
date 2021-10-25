@@ -14,7 +14,7 @@
     <groupId>net.shibboleth.idp</groupId>
     <artifactId>idp-jetty-base</artifactId>
     <packaging>pom</packaging>
-    <version>for-9.4.44-WINDOWS-SNAPSHOT</version>
+    <version>for-9.4.44-WINDOWS</version>
 
     <properties>
         <slf4j.version>1.7.32</slf4j.version>
