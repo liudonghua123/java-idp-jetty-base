@@ -7,7 +7,7 @@
     <parent>
         <groupId>net.shibboleth</groupId>
         <artifactId>parent</artifactId>
-        <version>11.2.0</version>
+        <version>11.2.2-SNAPSHOT</version>
     </parent>
 
     <name>idp-jetty-base</name>
@@ -17,8 +17,6 @@
     <version>9.4.1-SNAPSHOT</version>
 
     <properties>
-        <slf4j.version>1.7.32</slf4j.version>
-        <logback.version>1.2.6</logback.version>
         <jetty94-dta-ssl.version>1.0.0</jetty94-dta-ssl.version>
         <assemblyDirectory>${project.build.directory}/idp-jetty-base</assemblyDirectory>
     </properties>
