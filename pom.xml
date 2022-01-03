@@ -7,20 +7,21 @@
     <parent>
         <groupId>net.shibboleth</groupId>
         <artifactId>parent</artifactId>
-        <version>11.2.2-SNAPSHOT</version>
+        <version>11.2.1</version>
     </parent>
 
     <name>idp-jetty-base</name>
     <groupId>net.shibboleth.idp</groupId>
     <artifactId>idp-jetty-base</artifactId>
     <packaging>pom</packaging>
-    <version>for-9.4.4x-WINDOWS-SNAPSHOT</version>
+    <version>for-9.4.44-WINDOWS-SNAPSHOT</version>
 
     <properties>
         <slf4j.version>1.7.32</slf4j.version>
         <logback.version>1.2.6</logback.version>
         <jetty94-dta-ssl.version>1.0.0</jetty94-dta-ssl.version>
         <assemblyDirectory>${project.build.directory}/idp-jetty-base</assemblyDirectory>
+        <logback.version>1.2.9</logback.version>
     </properties>
 
     <repositories>
@@ -192,7 +193,6 @@
                 <configuration>
                     <appendAssemblyId>false</appendAssemblyId>
                     <descriptors>
-                        <descriptor>src/main/assembly/tgz.xml</descriptor>
                         <descriptor>src/main/assembly/zip.xml</descriptor>
                         <!--  <descriptor>src/main/assembly/testbed.xml</descriptor> -->
                     </descriptors>
@@ -215,12 +215,12 @@
                     <dependency>
                         <groupId>net.shibboleth.maven.enforcer.rules</groupId>
                         <artifactId>maven-dist-enforcer</artifactId>
-                        <version>2.1.0</version>
+                        <version>3.1.0-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
                 <executions>
                     <execution>
-                        <id>idp-enforce</id>
+                        <id>idp-jetty-base-enforce</id>
                         <phase>verify</phase>
                         <goals>
                             <goal>enforce</goal>
@@ -228,13 +228,17 @@
                         <configuration>
                             <rules>
                                 <jarEnforcer implementation="net.shibboleth.mvn.enforcer.impl.JarEnforcer">
-                                    <enforcerData>${basedir}/src/main/enforcer</enforcerData>
+                                    <dataGroupId>net.shibboleth.maven.enforcer.rules</dataGroupId>
+                                    <dataArtifactId>maven-dist-enforcer-data</dataArtifactId>
+                                    <dataVersion>1.0.0-SNAPSHOT</dataVersion>
+                                    <dataKeyRing>${basedir}/src/main/enforcer/shibbolethKeys.gpg</dataKeyRing>
                                     <parentPomDir>${basedir}</parentPomDir>
-                                    <jarDirs>${project.build.directory}/idp-jetty-base/jetty-base/lib/ext ${project.build.directory}/idp-jetty-base/jetty-base/lib/logback ${project.build.directory}/idp-jetty-base/jetty-base/lib/slf4j bin/lib </jarDirs>
+                                    <zipFiles>${project.build.directory}/idp-jetty-base-${project.version}.zip</zipFiles>
                                     <checkSignatures>true</checkSignatures>
-                                    <checkDependencies>false</checkDependencies>
+                                    <checkDependencies>true</checkDependencies>
                                     <listJarSources>false</listJarSources>
-                                </jarEnforcer>
+                                    <checkM2>${net.shibboleth.maven.enforcer.rules.checkM2}</checkM2>
+                                 </jarEnforcer>
                             </rules>
                         </configuration>
                     </execution>
