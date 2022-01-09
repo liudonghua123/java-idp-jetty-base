@@ -18,10 +18,9 @@
 
     <properties>
         <slf4j.version>1.7.32</slf4j.version>
-        <logback.version>1.2.6</logback.version>
         <jetty94-dta-ssl.version>1.0.0</jetty94-dta-ssl.version>
         <assemblyDirectory>${project.build.directory}/idp-jetty-base</assemblyDirectory>
-        <logback.version>1.2.9</logback.version>
+        <logback.version>1.2.10</logback.version>
     </properties>
 
     <repositories>
