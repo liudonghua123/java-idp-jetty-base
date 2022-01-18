@@ -14,7 +14,7 @@
     <groupId>net.shibboleth.idp</groupId>
     <artifactId>idp-jetty-base</artifactId>
     <packaging>pom</packaging>
-    <version>for-9.4.44-WINDOWS-SNAPSHOT</version>
+    <version>for-9.4.44-WINDOWS-LOGBACK-1.2.10</version>
 
     <properties>
         <slf4j.version>1.7.32</slf4j.version>
@@ -214,7 +214,7 @@
                     <dependency>
                         <groupId>net.shibboleth.maven.enforcer.rules</groupId>
                         <artifactId>maven-dist-enforcer</artifactId>
-                        <version>3.1.0-SNAPSHOT</version>
+                        <version>3.1.0</version>
                     </dependency>
                 </dependencies>
                 <executions>
@@ -229,7 +229,7 @@
                                 <jarEnforcer implementation="net.shibboleth.mvn.enforcer.impl.JarEnforcer">
                                     <dataGroupId>net.shibboleth.maven.enforcer.rules</dataGroupId>
                                     <dataArtifactId>maven-dist-enforcer-data</dataArtifactId>
-                                    <dataVersion>1.0.0-SNAPSHOT</dataVersion>
+                                    <dataVersion>1.0.0</dataVersion>
                                     <dataKeyRing>${basedir}/src/main/enforcer/shibbolethKeys.gpg</dataKeyRing>
                                     <parentPomDir>${basedir}</parentPomDir>
                                     <zipFiles>${project.build.directory}/idp-jetty-base-${project.version}.zip</zipFiles>
