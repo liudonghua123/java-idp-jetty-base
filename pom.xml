@@ -14,7 +14,7 @@
     <groupId>net.shibboleth.idp</groupId>
     <artifactId>idp-jetty-base</artifactId>
     <packaging>pom</packaging>
-    <version>for-9.4.44-WINDOWS-LOGBACK-1.2.10</version>
+    <version>for-9.4.xx-WINDOWS-LOGBACK-1.2.10-SNAPSHOT</version>
 
     <properties>
         <slf4j.version>1.7.32</slf4j.version>
