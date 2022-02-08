@@ -8,7 +8,7 @@
 
   <!-- =========================================================== -->
   <!-- Configure Request Log for Server                            -->
-  <!-- (Use RequestLogHandler for a context specific RequestLog    -->
+  <!-- Use RequestLogHandler for a context specific RequestLog     -->
   <!-- =========================================================== -->
   <Set name="RequestLog">
     <New id="RequestLog" class="org.eclipse.jetty.server.CustomRequestLog">
