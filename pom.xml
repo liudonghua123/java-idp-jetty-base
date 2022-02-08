@@ -19,6 +19,7 @@
     <properties>
         <jetty94-dta-ssl.version>1.0.0</jetty94-dta-ssl.version>
         <assemblyDirectory>${project.build.directory}/idp-jetty-base</assemblyDirectory>
+        <logback.version>1.3.0-alpha13</logback.version>
     </properties>
 
     <repositories>
@@ -128,6 +129,34 @@
                                     <outputDirectory>${assemblyDirectory}/jetty-base/lib/ext</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
+                        </configuration>
+                    </execution>
+                    <!-- Copy Logback logging dependencies to jetty-base/lib/logging directory. -->
+                    <execution>
+                        <id>copy-jetty-logging-logback</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>ch.qos.logback</groupId>
+                                    <artifactId>logback-classic</artifactId>
+                                    <version>${logback.version}</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>ch.qos.logback</groupId>
+                                    <artifactId>logback-core</artifactId>
+                                    <version>${logback.version}</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>ch.qos.logback</groupId>
+                                    <artifactId>logback-access</artifactId>
+                                    <version>${logback.version}</version>
+                                </artifactItem>
+                            </artifactItems>
+                            <outputDirectory>${assemblyDirectory}/jetty-base/lib/logging/</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
