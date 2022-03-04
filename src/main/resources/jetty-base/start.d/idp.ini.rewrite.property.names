@@ -1,0 +1,22 @@
+# Property names to change.
+# The format is "oldPropertyName=currentPropertyName"
+#
+# Note that in order to guarantee backwards compatibility we can only add to this list.
+#
+# IDP 
+jetty.host=jetty.ssl.host
+jetty.https.port=jetty.ssl.port
+jetty.browser.keystore.path=jetty.sslContext.keyStorePath
+jetty.browser.keystore.password=jetty.sslContext.keyStorePassword
+jetty.browser.keystore.type=jetty.sslContext.keyStoreType
+jetty.nonhttps.host=jetty.http.host
+jetty.nonhttps.port=jetty.http.port
+jetty.context.path=idp.context.path
+jetty.backchannel.host=idp.backchannel.host
+jetty.backchannel.port=idp.backchannel.port
+jetty.backchannel.keystore.path=idp.backchannel.keyStorePath
+jetty.backchannel.keystore.password=idp.backchannel.keyStorePassword
+jetty.backchannel.keystore.type=idp.backchannel.keyStoreType
+jetty.nonhttps.host=jetty.http.host
+jetty.nonhttps.port=jetty.http.port
+jetty.war.path=idp.war.path

@@ -1,0 +1,34 @@
+#
+# Note for Windows users:
+#
+# These are the only six properties which are guaranteed to work between
+# upgrades.  You may find more elsewhere and add them here and they may
+# work. For this release.
+#
+# To repeat, only properties listed below are guarantee to work between
+# upgrades.
+#
+
+#
+# KeyStore Management.
+# In the following
+#     "idp.backchannel.*" refers to the TLS connection on the SOAP port (8443)
+#     "jetty.sslContext.*" refers to the TLS connection on 443
+
+
+idp.backchannel.keyStorePath=../credentials/idp-backchannel.p12
+jetty.sslContext.keyStorePath=../credentials/idp-userfacing.p12
+
+# Keystore passwords
+#
+idp.backchannel.keyStorePassword=changeit
+jetty.sslContext.keyStorePassword=changeit
+
+
+# Keystore types
+# You ahould not need to change them and support
+# may be removed in future releases
+idp.backchannel.keyStoreType=PKCS12
+jetty.sslContext.keyStoreType=PKCS12
+
+
