@@ -17,7 +17,6 @@
     <version>10.0.0.8-WINDOWS-SNAPSHOT</version>
 
     <properties>
-        <jetty-dta-ssl.version>1.0.0-SNAPSHOT</jetty-dta-ssl.version>
         <assemblyDirectory>${project.build.directory}/idp-jetty-base</assemblyDirectory>
         <logback.version>1.3.0-alpha13</logback.version>
     </properties>
@@ -41,14 +40,6 @@
 
     <dependencies>
         <!-- Runtime depenendencies only -->
-        <!-- Our Jetty 9 DTA plugin -->
-        <dependency>
-            <groupId>net.shibboleth.utilities.jetty</groupId>
-            <artifactId>jetty10-dta-ssl</artifactId>
-            <version>${jetty-dta-ssl.version}</version>
-            <optional>true</optional>
-            <scope>runtime</scope>
-        </dependency>
         <!-- Logback -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -98,26 +89,6 @@
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
-                    <!-- Copy Jetty DTA plugin to jetty-base/lib/ext/ directory. -->
-                    <execution>
-                        <id>copy-jetty-dta-ssl</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>net.shibboleth.utilities.jetty</groupId>
-                                    <artifactId>jetty10-dta-ssl</artifactId>
-                                    <version>${jetty-dta-ssl.version}</version>
-                                    <type>jar</type>
-                                    <overWrite>false</overWrite>
-                                    <outputDirectory>${assemblyDirectory}/jetty-base/lib/ext</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
                     <!-- Copy Logback logging dependencies to jetty-base/lib/logging directory. -->
                     <execution>
                         <id>copy-jetty-logging-logback</id>
