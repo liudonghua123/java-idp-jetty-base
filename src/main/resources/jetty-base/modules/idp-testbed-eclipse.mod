@@ -11,7 +11,7 @@ https://build.shibboleth.net/nexus/service/local/artifact/maven/redirect?r=third
 ../../../../../java-identity-provider/idp-conf/target/test-classes/
 
 # idp-war third-party dependencies only
-../../../../../java-identity-provider/idp-war/target/idp-war-4.2.0-SNAPSHOT/WEB-INF/lib/*.jar
+../../../../../java-identity-provider/idp-war/target/idp-war-*-SNAPSHOT/WEB-INF/lib/*.jar
 
 
 # classes built by Eclipse
