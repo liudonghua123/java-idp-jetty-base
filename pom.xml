@@ -7,7 +7,7 @@
     <parent>
         <groupId>net.shibboleth</groupId>
         <artifactId>parent</artifactId>
-        <version>11.2.1</version>
+        <version>11.3.3</version>
     </parent>
 
     <name>idp-jetty-base</name>
@@ -147,7 +147,7 @@
                     <dependency>
                         <groupId>net.shibboleth.maven.enforcer.rules</groupId>
                         <artifactId>maven-dist-enforcer</artifactId>
-                        <version>3.1.1</version>
+                        <version>${maven-dist-enforcer.version}</version>
                     </dependency>
                 </dependencies>
                 <executions>
@@ -162,7 +162,7 @@
                                 <jarEnforcer implementation="net.shibboleth.mvn.enforcer.impl.JarEnforcer">
                                     <dataGroupId>net.shibboleth.maven.enforcer.rules</dataGroupId>
                                     <dataArtifactId>maven-dist-enforcer-data</dataArtifactId>
-                                    <dataVersion>1.0.4</dataVersion>
+                                    <dataVersion>${maven-dist-enforcer-data.version}</dataVersion>
                                     <dataKeyRing>${basedir}/src/main/enforcer/shibbolethKeys.gpg</dataKeyRing>
                                     <parentPomDir>${basedir}</parentPomDir>
                                     <zipFiles>${project.build.directory}/idp-jetty-base-${project.version}.zip</zipFiles>
