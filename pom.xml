@@ -14,11 +14,11 @@
     <groupId>net.shibboleth.idp</groupId>
     <artifactId>idp-jetty-base</artifactId>
     <packaging>pom</packaging>
-    <version>11.0.0.9-WINDOWS-SNAPSHOT</version>
+    <version>11.0.0.10-WINDOWS-SNAPSHOT</version>
 
     <properties>
         <assemblyDirectory>${project.build.directory}/idp-jetty-base</assemblyDirectory>
-        <logback.version>1.3.0-alpha14</logback.version>
+        <logback.version>1.3.0-alpha16</logback.version>
     </properties>
 
     <repositories>
