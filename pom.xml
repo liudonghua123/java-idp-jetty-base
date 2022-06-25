@@ -14,7 +14,7 @@
     <groupId>net.shibboleth.idp</groupId>
     <artifactId>idp-jetty-base</artifactId>
     <packaging>pom</packaging>
-    <version>11.0.11-WINDOWS</version>
+    <version>11.0.12-WINDOWS-SNAPSHOT</version>
 
     <properties>
         <assemblyDirectory>${project.build.directory}/idp-jetty-base</assemblyDirectory>
