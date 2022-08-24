@@ -16,6 +16,8 @@
 .*.swp
 .DS_store
 # Simulated Subversion default ignores end here
-
 /target
 /test-output
+.settings
+.classpath
+.project
